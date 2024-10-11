@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Función constructora para crear un objeto Car
+        function Car(brand, model, year) {
+            this.brand = brand;
+            this.model = model;
+            this.year = year;
+        }
+
+        // Agregar un método mediante prototype para mostrar la información del carro
+        Car.prototype.getInfo = function () {
+            return `Car: ${this.brand} ${this.model}, Year: ${this.year}`;
+        };
+
+        // Agregar otro método para "encender" el carro
+        Car.prototype.start = function () {
+            return `${this.brand} ${this.model} is starting...`;
+        };
+
+        Car.prototype.end = function () {
+            return `${this.brand} ${this.model} is ending...`;
+        };
+
+        // Crear una instancia del objeto Car
+        let myCar = new Car('Toyota', 'Corolla', 2021);
+
+        // Usar los métodos que definimos con prototype
+        console.log(myCar.getInfo()); // Car: Toyota Corolla, Year: 2021
+        console.log(myCar.start());   // Toyota Corolla is starting...
+        console.log(myCar.end());   // Toyota Corolla is ending...
+
+    </script>
+</body>
+
+</html>
